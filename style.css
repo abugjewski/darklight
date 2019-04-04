@@ -1,0 +1,59 @@
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    --clr-bg: #efefef;
+    --clr-container-bg: #dedede;
+    --clr-font: #2d2d2d;
+    --clr-header: #b0000b;
+
+    align-items: center;
+    background: var(--clr-bg);
+    color: var(--clr-font);
+    display: flex;
+    font-family: Arial, Helvetica, sans-serif;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+}
+
+html[data-theme="dark"] > body {
+    --clr-bg: #3c3c3c;
+    --clr-container-bg: #212121;
+    --clr-font: #efefef;
+}
+
+h1 {
+    color: var(--clr-header);
+}
+
+.container {
+    background: var(--clr-container-bg);
+    margin: 5rem;
+    padding: 5rem;
+}
+
+.top {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.content {
+    line-height: 1.6;
+}
+
+/*Z jakiegoś powodu nie dochodzi do gładkiej zmiany koloru tekstu*/
+html.transition,
+html.transition *,
+html.transition *:before,
+html.transition *:after {
+    transition: all 750ms !important;
+    transition-delay: 0 !important;
+}
